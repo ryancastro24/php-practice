@@ -44,13 +44,17 @@ $myYear = date("Y");
 $myFile =  fopen("sample.txt", "r") or die("unable to open file!");
 $txt = fread($myFile,filesize("sample.txt"));
 
-$witeFile = fopen("sample2.txt", "w") or die("cannot add to the file");
-fwrite($witeFile, $txt);
+$writeFile = fopen("sample2.txt", "w") or die("cannot add to the file");
+fwrite($writeFile, $txt);
 
 fclose($myFile);
-fclose($witeFile);
+fclose($writeFile);
+
+
+$newfile = "newfile to commoit";
 
 ?>
+
 
 
 
