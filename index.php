@@ -53,6 +53,44 @@ fclose($writeFile);
 
 $newfile = "newfile to commoit";
 
+
+class Car{
+   protected $color;
+   protected  $brand;
+    
+     function __construct($color, $brand){
+        $this->color = $color;
+        $this->brand = $brand;
+     }
+    function run(){ //method 1
+        echo "this car is running";
+    }
+
+   protected function details(){ // method 2
+        echo "<br>my car is $this->color  and it is a $this->brand"; 
+    }
+}// end of car class
+
+class Fourwheels extends Car{ // inherets  all the attributes and methods of the car class
+    
+    public function pitstop(){ // fourwheel method 1
+       $this->details();
+       echo " is the pit shop";
+    }
+}//end of fourwheels class
+
+$myCar = new Car("red","toyota");
+
+
+
+$herCar = new Car("blue","honda");
+
+
+$myNewCar =  new Fourwheels("red", "volvo");
+
+echo $myNewCar->pitstop();
+
+
 ?>
 
 
